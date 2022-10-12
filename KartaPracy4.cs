@@ -1,165 +1,154 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Security.Cryptography.X509Certificates;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp2
+namespace ConsoleApp3
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static int kp1z1(int a, int b)
         {
-            /*
-                        int a, b;
-                        a = int.Parse(Console.ReadLine());
-                        b = int.Parse(Console.ReadLine());
-                        Console.WriteLine((a*a)+(b*b));
-                        Console.ReadKey();
-            */
+            return a * a + b * b;
+        }
 
-            /*
-                        int x = int.Parse(Console.ReadLine());
-                        int y = int.Parse(Console.ReadLine());
-                        int z = int.Parse(Console.ReadLine());
-                        int a, b, c;
-
-                        if (x==y && x==z && y==z)
-                        {
-                            a = x;
-                            b = y;
-                            c = z;
-                            Console.WriteLine($"{a} {b} {c}");
-                        }
-                        else if (x<y && x<z)
-                        {
-                            a = x;
-                            if (y<z)
-                            {
-                                b = y;
-                                c = z;
-                                Console.WriteLine($"{a} {b} {c}");
-                            }
-                            else
-                            {
-                                b = z;
-                                c = y;
-                                Console.WriteLine($"{a} {b} {c}");
-                            }
-                        }
-                        else if (y < z && y < x)
-                        {
-                            a = y;
-                            if (z<x)
-                            {
-                                b = z;
-                                c = x;
-                                Console.WriteLine($"{a} {b} {c}");
-                            }
-                            else
-                            {
-                                b = x;
-                                c = z;
-                                Console.WriteLine($"{a} {b} {c}");
-                            }
-                        }
-                        else
-                        {
-                            a = z;
-                            if (x<y)
-                            {
-                                b = x;
-                                c = z;
-                                Console.WriteLine($"{a} {b} {c}");
-                            }
-                            else
-                            {
-                                b = z;
-                                c = x;
-                                Console.WriteLine($"{a} {b} {c}");
-                            }
-                        }
-                        Console.ReadKey();*/
-            /*
-                        int wynik = 1;
-                        int x = int.Parse(Console.ReadLine());
-                        for (int i = 1; i < x; i++)
-                        {
-                            wynik *= i;
-                        }
-                        Console.WriteLine(wynik);
-                        Console.ReadKey();
-            */
-
-            /*
-                        for (int i = -7; i <= 17; i+=4)
-                        {
-                            Console.WriteLine(i);
-                        }
-
-
-                        int x = -7;
-                        while (x<=17)
-                        {
-                            Console.WriteLine(x);
-                            x += 4;
-                        }
-
-                        //zad 6
-
-                        for (int i = 2; i <= 486; i*=3)
-                        {
-                            Console.WriteLine(i);
-                        }
-
-                        int a = 2;
-                        while (a<=486)
-                        {
-                            Console.WriteLine(a);
-                            a *= 3;
-                        }
-            */
-            /*
-                        int cyfry = 0;
-                        int liczba = int.Parse(Console.ReadLine());
-                        while (liczba > 0)
-                        {
-                            liczba /= 10;
-                            Console.WriteLine(liczba);
-                            cyfry += 1;
-                        }
-                        Console.WriteLine(cyfry);
-            */
-            /*
-                        int x = 0, suma = 0;
-                        int liczba = int.Parse(Console.ReadLine());
-                        while (liczba > 0)
-                        {
-                            x = liczba % 10;
-                            suma += x;
-                            liczba /= 10;
-                        }
-                        Console.WriteLine(suma);
-            */
-            int n = int.Parse(Console.ReadLine());
-            int dzielniki = 0;
-            for (int i = 1; i <= n; i++)
+        public static bool kp2z2(int a)
+        {
+            if (a >= 100 && a<=999 && a%17==0)
             {
-                if (n % i == 0)
-                {
-                    dzielniki += 1;
-                }
-            }
-            if (dzielniki ==2)
-            {
-                Console.WriteLine("Tak");
+                return true;
             }
             else
             {
-                Console.WriteLine("Nie");
+                return false;
             }
+        }
+
+        public static bool kp2z6(int a, int b)
+        {
+            if ((Math.Pow(a, b) - a) % b == 0) return true;
+            return false;
+        }
+
+        public static void kp3z1(int a)
+        {
+            for (int i = 0; i <= a; i++)
+            {
+                Console.WriteLine(i * i * i + 3);
+            }
+        }
+
+        public static void kp3z3(int a)
+        {
+            for (int i = 1; i <= a; i++)
+            {
+                if (a%i==0)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
+
+        public static int Zad2(int n)
+        {
+            int sumacyfr = 0;
+            int cyfra;
+            while (n>0)
+            {
+                cyfra = n % 10;
+                sumacyfr += cyfra;
+                n = n / 10;
+            }
+            return sumacyfr;
+        }
+
+        public static int Zad3(int n)
+        {
+            if (n == 0)
+            {
+                return 1;
+            }
+            return n * Zad3(n - 1);
+        }
+
+        public static int ankieta(int n)
+        {
+            int silnia = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                silnia *= i;
+            }
+            return silnia;
+        }
+
+        public static int zad4(int n)
+        {
+            if (n>2)
+            {
+                return 1;
+            }
+            return zad4(n - 1) + zad4(n - 2);
+        }
+        static void Main(string[] args)
+        {
+
+            //kp1z1
+            /*
+                        int a = int.Parse(Console.ReadLine());
+                        int b = int.Parse(Console.ReadLine());
+                        Console.WriteLine(kp1z1(a, b));
+            */
+
+            //kp2z2
+
+            /*
+                        int a = int.Parse(Console.ReadLine());
+                        Console.WriteLine(kp2z2(a));
+            */
+
+            //kp2z6
+
+            /*
+                        int a = int.Parse(Console.ReadLine());
+                        int b = int.Parse(Console.ReadLine());
+                        Console.WriteLine(kp2z6(a, b));
+            */
+
+
+            //kp3z1
+            /*
+                        int a = int.Parse(Console.ReadLine());
+            kp3z1(a);
+            */
+
+            /*
+                        //kp3z3
+                        int a = int.Parse(Console.ReadLine());
+                        kp3z3(a);
+            */
+
+
+            //zad 2
+
+            /*
+                        int n = int.Parse(Console.ReadLine());
+                        Console.WriteLine(Zad2(n)); 
+            */
+
+
+            //zad3
+
+            /*
+                        int n = int.Parse(Console.ReadLine());
+                        Console.WriteLine(ankieta(n));
+            */
+
+            //zad4
+
+            int n = int.Parse(Console.ReadLine());
+            Console.WriteLine(zad4(n));
         }
     }
 }
