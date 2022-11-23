@@ -1,0 +1,133 @@
+using System;
+
+namespace ConsoleApp5
+{
+    class LibraryManagmentSystem
+    {
+        string UserType, UserName, Password;
+        public void Login()
+        {
+            Console.WriteLine("Login");
+        }
+        public void Register()
+        {
+            Console.WriteLine("Register");
+        } 
+        public void Logout()
+        {
+            Console.WriteLine("Logout");
+        }
+    }
+
+    class User
+    {
+        string Name;
+        int id;
+        public void Verify()
+        {
+            Console.WriteLine("Verify");
+        }
+        public void CheckAccount()
+        {
+            Console.WriteLine("CheckAccount");
+        }
+        public void GetBookInfo()
+        {
+            Console.WriteLine("GetBookInfo");
+        }
+    }
+
+    class Account
+    {
+        string no_borrowed_books, no_reserved_books, no_returned_books, no_lost_books;
+        double fine_amount;
+        public void Calculate_Fine()
+        {
+            Console.WriteLine("Calculate_fine");
+        }
+    }
+
+    class Staff
+    {
+        string Dept;
+    }
+    
+    class Studnet
+    {
+        string Class;
+    }
+    class Book
+    {
+        string Title, Author, ISBN, Publication;
+        public void Show_duedt()
+        {
+            Console.WriteLine("Show_duedt");
+        }
+        public void Reservatuion_status()
+        {
+            Console.WriteLine("Reservation_status");
+        }
+        public void Feedback()
+        {
+            Console.WriteLine("Feedback");
+        }
+        public void Book_request()
+        {
+            Console.WriteLine("Book_request");
+        }
+        public void Renw_info()
+        {
+            Console.WriteLine("Renw_info");
+        }
+    }
+    class Librarian
+    {
+        string Name, Password, SearchString;
+        int id;
+        public void Verify_librarian()
+        {
+            Console.WriteLine("Verify_librarian");
+        }
+        public void Serach()
+        {
+            Console.WriteLine("Serach");
+        }
+    }
+
+    class LibraryDatabase
+    {
+        public List<string> List_Of_Books = new List<string>();
+
+        public void Add()
+        {
+            Console.WriteLine("Add");
+        }
+
+        public void Delete()
+        {
+            Console.WriteLine("Delete");
+        }
+
+        public void Update()
+        {
+            Console.WriteLine("Update");
+        }
+
+        public void Display()
+        {
+            Console.WriteLine("Display");
+        }
+
+        public void Search()
+        {
+            Console.WriteLine("Search");
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+        }
+    }
+}
