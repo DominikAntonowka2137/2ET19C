@@ -1,0 +1,106 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    class Account
+    {
+        public void getEmailAdress()
+        {
+
+        }
+
+        public void getName()
+        {
+
+        }
+
+        public void setEmailAdress()
+        {
+
+        }
+        public void setName()
+        {
+            
+        }
+
+    }
+    class AddresBook
+    {
+        public void getContact()
+        {
+
+        }
+        public void getContacts()
+        {
+
+        }
+        public void getName()
+        {
+
+        }
+        public void insertContact()
+        {
+
+        }
+        public void setName()
+        {
+
+        }
+    }
+    class Contact
+    {
+        public void getEmailAdress()
+        {
+
+        }
+        public void getFaxNumber()
+        {
+
+        }
+        public void getName()
+        {
+
+        }
+        public void getPrimaryContactMethod()
+        {
+
+        }
+        public void setEmailAdress()
+        {
+
+        }
+        public void setFaxNumber()
+        {
+
+        }
+        public void setName()
+        {
+
+        }
+        public void setPriaryContactMethod()
+        {
+
+        }
+    }
+    class ContactGroup
+    {
+        public void getName()
+        {
+
+        }
+        public void setName()
+        {
+
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+        }
+    }
+}
